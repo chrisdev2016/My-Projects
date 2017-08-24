@@ -27,7 +27,8 @@ constructor(){
         :{"display": 'none'} ;
 
       var currentUser = this.props.currentUser;
-
+      let myName = currentUser.first_name;
+      console.log
      
         return (
             <div className="homepage">
@@ -35,35 +36,38 @@ constructor(){
             <nav className="navbar navbar-default">
                 <div className="container-fluid">
                     <div className="navbar-header">
-                        <div className="navbar-brand" >
-                            <div className="logo logoDivision">
+                        <div className="navbar-brand " >
+                            <div className="logo logoDivision"> </div>
                         
-                           
-                         </div>
+                               <p className="company">RentMe</p>                          
                         </div>
                         
-                    </div>
-                    <ul className="nav navbar-nav" style={{'width':'100%'}}>
-                        <li ><Link to='/home'>Home</Link></li>
+                         </div>
+                         <div>
+                    <ul className="nav navbar-nav navbar-right" style={{'width':'100%'}}>
+                        <li  className="floatRight" ><Link to='/home'>Home</Link></li>
                         <li className="floatRight" style={ style }> <Link to='/Register'>register</Link> </li>
-                        <li style={style2}> <p> welcome {currentUser} </p> </li>
+                        <li className="floatRight" style={style2}> <a> welcome {myName}</a> </li>
                         
-                        <li style={style2}> <button> <Link to='/myListings'> my account </Link> </button> </li>
-                        <li style={style2}> <button onClick={()=>{this.props.logout()}}> log out </button> </li>
+                        {/*<li className="floatRight" style={style2}>  <Link to='/myListings'> my account </Link> </li>*/}
+                        <li  className="floatRight" style={style2}> <a onClick={()=>{this.props.logout()}}>  log out </a></li>
                         
                         <li className="floatRight" style={ style }> <Link to='/Login'>login</Link> </li>
                     </ul>
+                    </div>
                 </div>
             </nav>
             
         
             
 
-            <div>
-                <button><Link to='/CreateListing'>Looking to list</Link> </button>
-                <button>  <Link to='/Listings'>Looking to rent </Link></button>
-               
-            </div>
+              <div className="inner">
+                    <h1 className='home-search-inner'> Find your way home</h1>
+                    <div className="home-search-bar">
+                        <button className="inputBtnSearch"><Link to='/CreateListing'>Looking to list</Link> </button>
+                        <button className="inputBtnSearch" ><Link to='/Listings'>BROWSE LISTINGS</Link></button>
+                   </div>
+                </div>
             </div>
     
             

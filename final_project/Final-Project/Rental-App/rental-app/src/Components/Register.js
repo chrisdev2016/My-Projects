@@ -83,6 +83,12 @@ handleClick(e){
              onChange = {(event,newValue) => this.setState({email:newValue})}
              />
            <br/>
+            <TextField
+             hintText="Enter your LinkedIn profile"
+             floatingLabelText="LinkedIn profile"
+             onChange = {(event,newValue) => this.setState({last_name:newValue})}
+             />
+           <br/>
            <TextField
              type = "password"
              hintText="Enter your Password"

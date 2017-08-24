@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
-import '../ListDetails.css';
+import '../App.css';
 
 class ListDetails extends Component {
     constructor(props) {
@@ -12,53 +12,90 @@ class ListDetails extends Component {
         let iD = this.props.routeParams.id;
 
         let selectedListing = listings.find((listing) => {
-            return listing.id ===parseInt(iD) ;
+            return listing.id === parseInt(iD);
 
         })
 
-        // var reviews = selectedListing.reviews.map((item) => {
-        //     <li>item</li>
-        // })
+               var UserloggedIn =this.props.isUserLoggedIn
 
-        // console.log(reviews)
+        var style = UserloggedIn ? {
+           "display": 'none'
+        } : null;
+
+        console.log(style)
+
+ var style2 = UserloggedIn ?
+           null
+        :{"display": 'none'} ;
+
+      var currentUser = this.props.currentUser;
+
+
 
         console.log(selectedListing)
 
         return (
-     
+         <div >
 
+            <nav className="navbar navbar-default">
+                <div className="container-fluid">
+                    <div className="navbar-header">
+                        <div className="navbar-brand " >
+                            <div className="logo logoDivision"> </div>
+                        
+                               <p className="company">RentMe</p>                          
+                        </div>
+                        
+                         </div>
+                         <div>
+                    <ul className="nav navbar-nav" style={{'width':'100%'}}>
+                        <li  className="floatRight" ><Link to='/home'>Home</Link></li>
+                        <li className="floatRight" style={ style }> <Link to='/Register'>register</Link> </li>
+                        
+                        
+                        <li className="floatRight" style={style2}> <a> welcome </a> </li>
+                         <li  className="floatRight" style={style2}> <a onClick={()=>{this.props.logout()}}>  log out </a></li>
+                        
+                        <li className="floatRight" style={ style }> <Link to='/Login'>login</Link> </li>
+                    </ul>
+                    </div>
+                </div>
+            </nav>
 
-                                                        
-       <div className="thumbnail">
+            <div className="w3-card-4 w3-light-blue">
+                     <div className="w3-container w3-center ">
 
-        <div>
-               <img className="image-responsive center-block"  src={selectedListing.images[0]} alt=""/>
-        </div>
-        <div className="text-center caption">
-         <p>address: {selectedListing.formAddress} {selectedListing.formUnit}
-         {selectedListing.formCity}
-         {selectedListing.formProvince}
-          {selectedListing.formPostalCode}
-         </p>
-         <p> number of bedrooms: {selectedListing.formNumberOfBedrooms}</p>
-         <p> number of bathrooms:{selectedListing.formNumberOfBathrooms}</p>
-         <p> rent: {selectedListing.formRentAmount}</p>
-          <p> contact details:{selectedListing.formContactName}
-          {selectedListing.formContactNumber}
-            {selectedListing.formEmail}
-          </p>
-         <p>{selectedListing.formRentAmount}</p>
-            <p>{selectedListing.interests}</p>
-               {/*<ul>{reviews}</ul>    */}
+                     <img className="img-responsive" src={selectedListing.images[0]} alt="" />
+
                   
-                {/*<Link to='/reviews'>Reviews </Link>*/}
-                  
+                    <h4><strong>Property Details</strong></h4>
+                    <div className="w3-row w3-large">
+                        <div className="w3-col s12">
+                            <p><i className="fa fa-envelope"></i> {selectedListing.formAddress} {selectedListing.formUnit}
+                                {selectedListing.formCity}  {selectedListing.formProvince}  {selectedListing.formPostalCode}</p>
+                            <p><i className="fa fa-fw fa-bath"></i> {selectedListing.formNumberOfBedrooms}</p>
+                            <p><i className="fa fa-fw fa-bed"></i> {selectedListing.formNumberOfBedrooms} </p>
+                        </div>
+                    </div>
+
+
+                    <h4><strong>Contact details</strong></h4>
+                    <div class="w3-row w3-large">
+                        <div class="w3-col s6">
+                            <p><i class="fa fa-user-o"></i>{selectedListing.formContactName} </p>
+                            <p><i className="fa fa-phone"></i> {selectedListing.formContactNumber}</p>
+                            <p><i className="fa fa-envelope"></i> {selectedListing.formEmail} </p>
+                        </div>
+                     </div>
+                     
+                        <button className="showInterestButton" onClick={() => { this.props.showInterest(selectedListing.id) }} >show interest</button>
+                    
+                </div>
                 
-      
-              <button onClick={()=>{this.props.showInterest(selectedListing.id)}} >show interest</button>
-    </div>
-    </div>
-    
+            </div>
+
+            </div>
+
 
 
 
@@ -83,18 +120,18 @@ export default ListDetails;
 //                 <h2 className="w3-text-green">The Apartment</h2>
 //                 <div className="w3-display-container mySlides">
 //                     <img src={selectedListing.images[0]} style="width:100%;margin-bottom:-6px"/>
-                       
+
 //              </div>
 
-             
+
 //   <div class="w3-container">
 //     <h4><strong>The space</strong></h4>
 //     <div class="w3-row w3-large">
 //       <div class="w3-col s6">
-        
+
 //         <p><i class="fa fa-fw fa-bath"></i> Bathrooms: 2</p>
 //         <p><i class="fa fa-fw fa-bed"></i> Bedrooms: 1</p>
 //       </div>
-      
+
 //     </div>
 //     <hr>

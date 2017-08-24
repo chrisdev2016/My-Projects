@@ -3,6 +3,8 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import {browserHistory} from 'react-router';
+import { Link } from 'react-router';
+import '../App.css';
 
 import '../Form.css';
 
@@ -134,8 +136,59 @@ class CreateListing extends Component {
     };
 
     render() {
+
+       var UserloggedIn =this.props.isUserLoggedIn
+
+        var style = UserloggedIn ? {
+           "display": 'none'
+        } : null;
+
+        console.log(style)
+
+ var style2 = UserloggedIn ?
+           null
+        :{"display": 'none'} ;
+
+      var currentUser = this.props.currentUser;
+
+
         return (
-            <form className='react-form' onSubmit={this.handleSubmit}>
+
+           <div >
+
+        
+
+                        <nav className="navbar navbar-default">
+                <div className="container-fluid">
+                    <div className="navbar-header">
+                        <div className="navbar-brand " >
+                            <div className="logo logoDivision"> </div>
+                        
+                               <p className="company">RentMe</p>                          
+                        </div>
+                        
+                         </div>
+                         <div>
+                    <ul className="nav navbar-nav" style={{'width':'100%'}}>
+                        <li  className="floatRight" ><Link to='/home'>Home</Link></li>
+                        <li className="floatRight" style={ style }> <Link to='/Register'>register</Link> </li>
+                       
+                        <li className="floatRight" style={style2}> <a> welcome</a> </li>
+                         <li className="floatRight" style={ style }> <Link to='/Login'>login</Link> </li>
+                        <li className="floatRight" style={ style }> <Link to='/Login'>login</Link> </li>
+                    </ul>
+                    </div>
+                </div>
+            </nav>
+
+
+
+
+         
+
+            <form id="createListing" className='react-form' style={{ 'width': '75%','height':'100%' }}  onSubmit={this.handleSubmit}>
+               
+               
                 <h1>Tell us about your property</h1>
 
 
@@ -213,6 +266,9 @@ class CreateListing extends Component {
                 </div>
 
             </form>
+            
+            </div>
+        
         )
     }
 };

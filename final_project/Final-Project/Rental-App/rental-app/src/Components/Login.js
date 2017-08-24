@@ -67,6 +67,7 @@ class Login extends Component {
 
   render() {
     return (
+      <div className="container-form-login">
       <div>
         <MuiThemeProvider>
           <div>
@@ -90,6 +91,7 @@ class Login extends Component {
             />
           </div>
         </MuiThemeProvider>
+      </div>
       </div>
     );
   }

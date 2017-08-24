@@ -12,7 +12,7 @@ import Reviews from './Components/Reviews.js';
 import MyListings from './Components/myListings.js';
 import Tenant from './Components/Tenant.js';
 import WriteReview from './Components/WriteReview.js';
-import UploadScreen from './Components/UploadScreen.js';
+import InterestedUser from './Components/InterestedUser.js'
 import axios from 'axios';
 
 
@@ -39,7 +39,7 @@ class App extends Component {
   }
 
   logout() {
-    debugger;
+    
     console.log('LOGOUT RAN!');
     this.setState({
       currentUser: '',
@@ -61,30 +61,30 @@ class App extends Component {
   }
 
 
-    componentDidUpdate() {
+  //   componentDidUpdate() {
 
-        localStorage.setItem("LogInStatus", JSON.stringify(this.state.isUserLoggedIn))
-        localStorage.setItem("UserLoggedIn", JSON.stringify(this.state.currentUser))
-
-
-
-    }
+  //       localStorage.setItem("LogInStatus", JSON.stringify(this.state.isUserLoggedIn))
+  //       localStorage.setItem("UserLoggedIn", JSON.stringify(this.state.currentUser))
 
 
-  componentWillMount() {
+
+  //   }
+
+
+  // componentWillMount() {
  
-        let updatedLoginStatus = localStorage.getItem('LogInStatus')
-        let updatedUserLoggedIn = localStorage.getItem('UserLoggedIn')
+  //       let updatedLoginStatus = localStorage.getItem('LogInStatus')
+  //       let updatedUserLoggedIn = localStorage.getItem('UserLoggedIn')
 
 
 
-        this.setState({
-            isUserLoggedIn: JSON.parse(updatedLoginStatus) ? JSON.parse(updatedLoginStatus) : this.state.isUserLoggedIn,
-            currentUser: JSON.parse(updatedUserLoggedIn) ? JSON.parse(updatedUserLoggedIn) : this.state.currentUser
-        })
+  //       this.setState({
+  //           isUserLoggedIn: JSON.parse(updatedLoginStatus) ? JSON.parse(updatedLoginStatus) : this.state.isUserLoggedIn,
+  //           currentUser: JSON.parse(updatedUserLoggedIn) ? JSON.parse(updatedUserLoggedIn) : this.state.currentUser
+  //       })
 
 
-  }
+  // }
 
   showInterest(id) {
     const that = this;

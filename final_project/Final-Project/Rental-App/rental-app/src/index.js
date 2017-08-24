@@ -14,7 +14,8 @@ import Login from './Components/Login.js';
 import MyListings from './Components/myListings.js';
 import Tenant from './Components/Tenant.js';
 import Reviews from './Components/Reviews.js';
-import UploadScreen from './Components/UploadScreen.js';
+import InterestedUser from './Components/InterestedUser.js'
+
 
 
 var listings = [{
@@ -191,7 +192,7 @@ ReactDOM.render(
              <Route path ='myListings' component = {MyListings} />
              <Route path = 'tenant/:id' component={Tenant}/>
              <Route path = 'listings/:id/reviews' component={Reviews}/>
-             <Route path = 'uploadscreen' component={UploadScreen}/>
+             <Route path = 'interestedUser' component={InterestedUser}/>
              
             
         </Route>
