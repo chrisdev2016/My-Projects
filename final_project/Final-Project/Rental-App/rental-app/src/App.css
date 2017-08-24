@@ -1,0 +1,109 @@
+/*.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}*/
+
+.image{
+  position: relative; 
+   width: 100%;
+}
+
+h5 { 
+   position: absolute; 
+   top: 200px; 
+   left: 0; 
+   width: 100%; 
+}
+
+h5 span { 
+   color:white; 
+   font:  24px/45px Helvetica, Sans-Serif; 
+   letter-spacing: -1px;  
+    padding: 10px; 
+}
+
+h5 span.spacer {
+   padding:0 5px;
+}
+
+
+
+.homepage{
+  background-image: url('./Images/house.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  
+}
+
+/*.card{
+    background-image: url('./Images/rental1.jpg');
+  position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}*/
+
+.cardText{
+  height: 30px;
+  width:50px;
+}
+
+.adjustPadding{
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.articlePosition{
+  position: relative;
+}
+
+.positionAbsolute{
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  bottom:40px;
+  left:0px;
+}
+
+.logo{
+  height: 50px;
+  width:50px;
+  
+}
+
+.logoDivision{
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpexVk9z3RGwS5Hik8WMVh2ru2jdsB1qzmCPhMCr5UOxyNpnsqLg');
+  background-size: 100%;
+  background-color: gray
+
+}
+
+ul > li.floatRight{
+  float:right;
+}
