@@ -72,7 +72,7 @@ return(
 
       
 
-        // <img src={item.images[0]}/>
+        
 
 
 

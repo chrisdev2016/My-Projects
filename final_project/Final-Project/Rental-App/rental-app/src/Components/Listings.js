@@ -70,9 +70,17 @@ class Listings extends Component {
       <ul className="nav navbar-nav navbar-right">
         <li > <Link to='/home'>Home </Link> </li>
                             <li className="floatRight" style={style}> <Link to='/Register'>register</Link> </li>
-                            <li className="floatRight" style={style2}> <a> welcome </a> </li>
+                            {/*<li className="floatRight" style={style2}> <a> welcome </a> </li>*/}
                             <li className="floatRight" style={style}> <Link to='/Login'>login</Link> </li>
-                            <li  className="floatRight" style={style2}> <a onClick={()=>{this.props.logout()}}>  log out </a></li>
+                              <li className="dropdown floatRight" style={style2}>
+          <a href="#" className="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Account<span className="caret"></span></a>
+          <ul className="dropdown-menu">
+            <li><a href="#"><Link to='/myListings'>my listings</Link></a></li>
+            <li> <a  onClick={()=>{this.props.logout()}}>  log out </a></li>
+            
+          </ul>
+        </li>
+                            {/*<li  className="floatRight" style={style2}> <a onClick={()=>{this.props.logout()}}>  log out </a></li>*/}
       </ul>
     </div>
   </div>

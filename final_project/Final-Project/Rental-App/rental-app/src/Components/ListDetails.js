@@ -37,7 +37,7 @@ class ListDetails extends Component {
         return (
          <div >
 
-            <nav className="navbar navbar-default">
+            <nav className="navbar navbar-default" style={{'background-color':'blue'}}>
                 <div className="container-fluid">
                     <div className="navbar-header">
                         <div className="navbar-brand " >
@@ -62,13 +62,9 @@ class ListDetails extends Component {
                 </div>
             </nav>
 
-            <div className="w3-card-4 w3-light-blue">
-                     <div className="w3-container w3-center ">
-
-                     <img className="img-responsive" src={selectedListing.images[0]} alt="" />
-
-                  
-                    <h4><strong>Property Details</strong></h4>
+            <div className="col-sm-6"><img className="img-responsive" src={selectedListing.images[0]} alt="" /></div>
+            <div className="col-sm-6">
+                 <h4><strong>Property Details</strong></h4>
                     <div className="w3-row w3-large">
                         <div className="w3-col s12">
                             <p><i className="fa fa-envelope"></i> {selectedListing.formAddress} {selectedListing.formUnit}
@@ -78,6 +74,9 @@ class ListDetails extends Component {
                         </div>
                     </div>
 
+                    <br/>
+                    
+                    
 
                     <h4><strong>Contact details</strong></h4>
                     <div class="w3-row w3-large">
@@ -88,11 +87,26 @@ class ListDetails extends Component {
                         </div>
                      </div>
                      
+                   
                         <button className="showInterestButton" onClick={() => { this.props.showInterest(selectedListing.id) }} >show interest</button>
+            
+                     
+                        <div className="alert alert-success" role="alert">
+                         You posted an interest on this property.
+                        </div>
                     
-                </div>
-                
+
+                    
+            
             </div>
+
+           
+
+
+        
+
+
+        
 
             </div>
 

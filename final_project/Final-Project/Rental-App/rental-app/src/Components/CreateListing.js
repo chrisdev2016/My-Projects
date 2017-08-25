@@ -175,7 +175,7 @@ class CreateListing extends Component {
                        
                         <li className="floatRight" style={style2}> <a> welcome</a> </li>
                          <li className="floatRight" style={ style }> <Link to='/Login'>login</Link> </li>
-                        <li className="floatRight" style={ style }> <Link to='/Login'>login</Link> </li>
+                    
                     </ul>
                     </div>
                 </div>

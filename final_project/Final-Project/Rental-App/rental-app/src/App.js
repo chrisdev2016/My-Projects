@@ -43,7 +43,8 @@ class App extends Component {
     console.log('LOGOUT RAN!');
     this.setState({
       currentUser: '',
-      isUserLoggedIn: false
+      isUserLoggedIn: false,
+    
     })
     browserHistory.push('/home')
 
@@ -99,7 +100,9 @@ class App extends Component {
     this.setState({
       listings: listings
     })
-
+   
+  
+  
 
   }
 

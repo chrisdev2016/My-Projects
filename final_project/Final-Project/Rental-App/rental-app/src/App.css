@@ -149,7 +149,8 @@ ul > li.floatRight{
     height: 41px;
     margin-left: 3px;
     width: 400px;
-    background-color:yellow;
+    background-color:gold;
+    
 }
 
 .company{
@@ -167,11 +168,14 @@ ul > li.floatRight{
     background-color:lightskyblue;
 }
 
+
 .activeDiv{
-  -webkit-box-shadow: 2px 2px 47px 0px rgba(25,181,209,1);
--moz-box-shadow: 2px 2px 47px 0px rgba(25,181,209,1);
-box-shadow: 2px 2px 47px 0px rgba(25,181,209,1);
+  border: 2px solid black;
+-webkit-box-shadow: 2px 2px 47px 0px rgba(207,25,92,1);
+-moz-box-shadow: 2px 2px 47px 0px rgba(207,25,92,1);
+box-shadow: 2px 2px 47px 0px rgba(207,25,92,1);
 }
+
 .img-responsive{
   display:inline-block;
 }
