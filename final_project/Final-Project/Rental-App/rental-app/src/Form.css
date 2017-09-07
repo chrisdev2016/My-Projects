@@ -1,7 +1,8 @@
-html {
+ html {
  box-sizing: border-box;
  font-size: 16px;
 }
+
 
 *,
 *:after,
@@ -71,7 +72,7 @@ textarea {
  transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
 }
 
-  #createListing input:focus,
+  #createListing .input:focus,
 textarea:focus {
  outline: 0;
  border-bottom-color: #ffab00;
@@ -112,11 +113,22 @@ textarea:focus {
 }
 
 .container-form{
-      width: 50%;
+    width: 50%;
+    margin-left: 50px;
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-    background-color:white;
+  
 }
+
+.field{
+    
+    margin-left: 50px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+  
+}
+
 
  

@@ -12,7 +12,8 @@ import Reviews from './Components/Reviews.js';
 import MyListings from './Components/myListings.js';
 import Tenant from './Components/Tenant.js';
 import WriteReview from './Components/WriteReview.js';
-import InterestedUser from './Components/InterestedUser.js'
+import InterestedUser from './Components/InterestedUser.js';
+import SearchResults from './Components/SearchResults.js';
 import axios from 'axios';
 
 
@@ -27,31 +28,42 @@ class App extends Component {
 
       isUserLoggedIn: false,
 
-      listings: this.props.route.listings
+      listings: this.props.route.listings,
+
+      input: '',
+
+      interested: false
+
+
     }
 
     this.showInterest = this.showInterest.bind(this)
-    // this.CreateListing = this.CreateListing.bind(this)
+
     this.setCurrentUser = this.setCurrentUser.bind(this)
     this.logout = this.logout.bind(this)
+    this.search = this.search.bind(this)
+
 
 
   }
 
+
+
+
   logout() {
-    
+
     console.log('LOGOUT RAN!');
     this.setState({
       currentUser: '',
       isUserLoggedIn: false,
-    
+
     })
     browserHistory.push('/home')
 
   }
 
   setCurrentUser(username) {
-    console.log('hi')
+
     this.setState({
       isUserLoggedIn: true,
       currentUser: username
@@ -61,31 +73,32 @@ class App extends Component {
 
   }
 
-
-  //   componentDidUpdate() {
-
-  //       localStorage.setItem("LogInStatus", JSON.stringify(this.state.isUserLoggedIn))
-  //       localStorage.setItem("UserLoggedIn", JSON.stringify(this.state.currentUser))
+  search(text) {
 
 
+    alert(text)
 
-  //   }
-
-
-  // componentWillMount() {
- 
-  //       let updatedLoginStatus = localStorage.getItem('LogInStatus')
-  //       let updatedUserLoggedIn = localStorage.getItem('UserLoggedIn')
+    var filteredListings = this.state.listings.filter(listing => {
+      return listing.formCity.toLowerCase() == text.toLowerCase()
+    })
 
 
 
-  //       this.setState({
-  //           isUserLoggedIn: JSON.parse(updatedLoginStatus) ? JSON.parse(updatedLoginStatus) : this.state.isUserLoggedIn,
-  //           currentUser: JSON.parse(updatedUserLoggedIn) ? JSON.parse(updatedUserLoggedIn) : this.state.currentUser
-  //       })
+    this.setState({
+      listings: filteredListings
+    })
 
 
-  // }
+
+    if (!filteredListings) {
+      alert('no listings found')
+    }
+
+  }
+
+
+
+
 
   showInterest(id) {
     const that = this;
@@ -98,30 +111,19 @@ class App extends Component {
 
     console.log(listings)
     this.setState({
-      listings: listings
+      listings: listings,
+      interested: true
     })
-   
-  
-  
+
+
 
   }
 
-
-
-
-
-
   render() {
-
-    let listings = this.state.listings
-
-    console.log(this.state)
-
-
 
     return (
       <div className="App">
-            
+
 
         {React.cloneElement(
           this.props.children, {
@@ -132,7 +134,11 @@ class App extends Component {
             currentUser: this.state.currentUser,
             isUserLoggedIn: this.state.isUserLoggedIn,
             showInterest: this.showInterest,
-            CreateListing: this.CreateListing
+            CreateListing: this.CreateListing,
+            search: this.search,
+            input: this.state.input,
+            interested: this.state.interested
+
           })}
 
       </div>

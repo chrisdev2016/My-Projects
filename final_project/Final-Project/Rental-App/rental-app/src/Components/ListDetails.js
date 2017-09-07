@@ -5,6 +5,7 @@ import '../App.css';
 class ListDetails extends Component {
     constructor(props) {
         super(props)
+       
     }
 
     render() {
@@ -87,12 +88,17 @@ class ListDetails extends Component {
                         </div>
                      </div>
                      
-                   
-                        <button className="showInterestButton" onClick={() => { this.props.showInterest(selectedListing.id) }} >show interest</button>
-            
+
+                        
+                        <button className="showInterestButton" disabled={this.props.isUserLoggedIn==false ||this.props.interested==true}  
+                        onClick={() => { this.props.showInterest(selectedListing.id) }} >show interest</button>
+                        
+                        <div>
+                        <p> {this.props.isUserLoggedIn ? null : 'please login to post interest on this property'}</p>
+                        </div>
                      
-                        <div className="alert alert-success" role="alert">
-                         You posted an interest on this property.
+                        <div>
+                        <p> {this.props.interested ? 'You posted an interest on this property':null}</p>
                         </div>
                     
 

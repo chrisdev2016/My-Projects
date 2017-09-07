@@ -101,7 +101,7 @@ class MyListings extends Component {
                 </nav>
 
 
-                <div className="panel panel-default">
+                <div className="panel panel-default mylisting-panel">
 
                     <div className="panel-heading">
 

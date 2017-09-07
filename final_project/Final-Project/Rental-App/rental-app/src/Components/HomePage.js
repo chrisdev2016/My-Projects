@@ -74,8 +74,8 @@ constructor(){
               <div className="inner">
                     <h1 className='home-search-inner'> Find your way home</h1>
                     <div className="home-search-bar">
-                        <button className="inputBtnSearch"><Link to='/CreateListing'> <strong>Looking to list </strong></Link> </button>
-                        <button className="inputBtnSearch" ><Link to='/Listings'> <strong>BROWSE LISTINGS </strong></Link></button>
+                        <button className="inputBtnSearch"><Link to='/CreateListing'> <strong>LIST YOUR RENTAL PROPERTY </strong></Link> </button>
+                        <button className="inputBtnSearch" ><Link to='/Listings'> <strong>BROWSE RENTAL LISTINGS </strong></Link></button>
                    </div>
                 </div>
             </div>

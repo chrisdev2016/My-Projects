@@ -6,7 +6,7 @@ import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
 import TextField from 'material-ui/TextField';
 import axios from 'axios';
-import UploadScreen from './UploadScreen.js'
+
 
 class Login extends Component {
   constructor(props) {
@@ -67,6 +67,7 @@ class Login extends Component {
 
   render() {
     return (
+      <div className="login-page">
       <div className="container-form-login">
       <div>
         <MuiThemeProvider>
@@ -91,6 +92,7 @@ class Login extends Component {
             />
           </div>
         </MuiThemeProvider>
+      </div>
       </div>
       </div>
     );

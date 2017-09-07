@@ -204,11 +204,30 @@ box-shadow: 2px 2px 47px 0px rgba(207,25,92,1);
 }
 
 .container-form-login{
-      width: 50%;
-      height: 100%;
+      width: 500px;
+      height: 500px;
   
     position: absolute;
     left: 50%;
-    transform: translate(-50%);
-    background-color:white;
+    top:5%;
+    transform: translate(-50%); 
+    
+}
+
+
+.login-page{
+  background-image: url('./Images/login.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  
+}
+.mylisting-panel{
+  width:700px;
+  margin-top: 50px;
+  margin-left: 100px;
 }

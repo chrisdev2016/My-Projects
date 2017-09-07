@@ -106,11 +106,14 @@ class CreateListing extends Component {
 
                     console.log("creation successful");
                       browserHistory.push('/home')
+                      alert("success")
 
                 }
             })
             .catch(function (error) {
                 console.log(error);
+                alert ("error")
+
             });
 
 
@@ -154,11 +157,11 @@ class CreateListing extends Component {
 
         return (
 
-           <div >
+           <div>
 
         
 
-                        <nav className="navbar navbar-default">
+                        {/*<nav className="navbar navbar-default">
                 <div className="container-fluid">
                     <div className="navbar-header">
                         <div className="navbar-brand " >
@@ -179,12 +182,12 @@ class CreateListing extends Component {
                     </ul>
                     </div>
                 </div>
-            </nav>
+            </nav>*/}
 
 
 
 
-         
+         <div className="container-form">
 
             <form id="createListing" className='react-form' style={{ 'width': '75%','height':'100%' }}  onSubmit={this.handleSubmit}>
                
@@ -192,7 +195,7 @@ class CreateListing extends Component {
                 <h1>Tell us about your property</h1>
 
 
-
+                
                 <fieldset className='form-group'>
                     <ReactFormLabel htmlFor='formAddress' title='Address:' />
 
@@ -261,11 +264,15 @@ class CreateListing extends Component {
                     <input id='formEmail' className='form-input' name='email' type='email' required onChange={this.handleChange} value={this.state.email} />
                 </fieldset>
 
+                
+
                 <div className='form-group'>
                     <input id='formButton' className='btn' type='submit' placeholder='Save' />
                 </div>
+                
 
             </form>
+            </div>
             
             </div>
         
