@@ -37,14 +37,15 @@ const Property = require('./models/Property').model;
 // getting the routes
 const userRoute = require('./Routes/usersRoute')
 const propertiesRoute = require('./Routes/propertiesRoute')
+const PORT = process.env.PORT || 8080;
 
 // connect through middleware
 app.use('/', userRoute)
 app.use('/', propertiesRoute)
 
 // server listening on
-app.listen(8080, () => {
-    console.log('SERVER RUNNING ON 8080');
+app.listen(PORT, () => {
+    console.log('SERVER RUNNING ON ' + PORT);
 })
 
 
