@@ -1,6 +1,6 @@
 
 import React, { Component } from 'react';
-import {browserHistory} from 'react-router';
+import { browserHistory } from 'react-router';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
 import RaisedButton from 'material-ui/RaisedButton';
@@ -28,27 +28,15 @@ class Login extends Component {
       "password": this.state.password
     }
     axios.post(apiBaseUrl + 'login', payload)
-      .then((response) =>{
+      .then((response) => {
         console.log(response);
-        if (response.status== 200) {
+        if (response.status == 200) {
           console.log("Login successfull");
-           browserHistory.push('/home')
-
-
-
-
+          browserHistory.push('/home')
 
           this.props.setCurrentUser(this.state.username)
 
-          // let currentUser = this.props.currentUser
-          // console.log(currentUser)
 
-         
-
-
-          //  var uploadScreen=[];
-          //  uploadScreen.push(<UploadScreen appContext={self.props.appContext}/>)
-          //  self.props.appContext.setState({loginPage:[],uploadScreen:uploadScreen})
         }
         else if (response.data.code == 204) {
           console.log("Username password do not match");
@@ -68,32 +56,32 @@ class Login extends Component {
   render() {
     return (
       <div className="login-page">
-      <div className="container-form-login">
-      <div>
-        <MuiThemeProvider>
+        <div className="container-form-login">
           <div>
-            <AppBar
-              title="Login"
-            />
-            <TextField
-              hintText="Enter your Username"
-              floatingLabelText="Username"
-              onChange={(event, newValue) => this.setState({ username: newValue })}
-            />
-            <br />
-            <TextField
-              type="password"
-              hintText="Enter your Password"
-              floatingLabelText="Password"
-              onChange={(event, newValue) => this.setState({ password: newValue })}
-            />
-            <br />
-            <RaisedButton label="Submit" primary={true} style={style} onClick={(event) => this.handleClick(event)}
-            />
+            <MuiThemeProvider>
+              <div>
+                <AppBar
+                  title="Login"
+                />
+                <TextField
+                  hintText="Enter your Username"
+                  floatingLabelText="Username"
+                  onChange={(event, newValue) => this.setState({ username: newValue })}
+                />
+                <br />
+                <TextField
+                  type="password"
+                  hintText="Enter your Password"
+                  floatingLabelText="Password"
+                  onChange={(event, newValue) => this.setState({ password: newValue })}
+                />
+                <br />
+                <RaisedButton label="Submit" primary={true} style={style} onClick={(event) => this.handleClick(event)}
+                />
+              </div>
+            </MuiThemeProvider>
           </div>
-        </MuiThemeProvider>
-      </div>
-      </div>
+        </div>
       </div>
     );
   }
