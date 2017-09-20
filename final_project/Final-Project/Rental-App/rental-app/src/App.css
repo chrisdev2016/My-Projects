@@ -1,0 +1,233 @@
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+
+.image{
+  position: relative; 
+   width: 100%;
+}
+
+h5 { 
+   position: absolute; 
+   top: 200px; 
+   left: 0; 
+   width: 100%; 
+}
+
+h5 span { 
+   color:white; 
+   font:  24px/45px Helvetica, Sans-Serif; 
+   letter-spacing: -1px;  
+    padding: 10px; 
+}
+
+h5 span.spacer {
+   padding:0 5px;
+}
+
+
+
+.homepage{
+  background-image: url('./Images/covpage.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  
+}
+
+/*.card{
+    background-image: url('./Images/rental1.jpg');
+  position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}*/
+
+.cardText{
+  height: 30px;
+  width:50px;
+}
+
+.adjustPadding{
+  padding-right: 0px;
+  padding-left: 0px;
+}
+
+.articlePosition{
+  position: relative;
+}
+
+.positionAbsolute{
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  bottom:40px;
+  left:0px;
+}
+
+.logo{
+  height: 50px;
+  width:50px;
+  
+}
+
+.logoDivision{
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpexVk9z3RGwS5Hik8WMVh2ru2jdsB1qzmCPhMCr5UOxyNpnsqLg');
+  background-size: 100%;
+  background-color: gray;
+  display: inline-block;
+
+}
+
+ul > li.floatRight{
+  float:right;
+}
+
+  
+.buttonDivision{
+ margin-left:30%
+}
+
+  .buttons{
+    margin:50px;
+  }
+ 
+
+
+.jumbo{
+  opacity: 0.8;
+ 
+}
+
+.fontLogo{
+  font-family: 'Pacifico';
+}
+
+.home-search-inner {
+    max-width: 940px;
+    margin: 0 auto 0 auto;
+    text-align: center;
+    font-size: 50px;
+    color: #fff;
+    padding: 100px 0 20px 0;
+    text-shadow: 1px 1px 1px #000;
+    font-family: 'Baron Neue',arial;
+    font-weight: normal;
+
+}
+
+.home-search-bar {
+    max-width: 908px;
+    margin: 0 auto;
+    background: rgba(255,255,255,0.7);
+    padding: 20px;
+
+}
+
+.inner {
+    width: 1100px;
+    margin: 0 auto;
+        max-width: 1200px;
+    padding: 0;
+
+}
+
+.inputBtnSearch {
+
+    padding: 9px 51px 9px 15px;
+    color: #fff;
+    font-family: 'Corbel Bold';
+    text-transform: uppercase;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    background-position: 59% -4px;
+    vertical-align: top;
+    border: none;
+    height: 41px;
+    margin-left: 3px;
+    width: 400px;
+    background-color:gold;
+    
+}
+
+.company{
+  font-family: 'Pacifico';
+  font-size: 20px;
+  display: inline-block
+}
+
+.w3-center {
+    text-align: center!important;
+    width: 50%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    background-color:lightskyblue;
+}
+
+
+.activeDiv{
+  border: 2px solid black;
+-webkit-box-shadow: 2px 2px 47px 0px rgba(207,25,92,1);
+-moz-box-shadow: 2px 2px 47px 0px rgba(207,25,92,1);
+box-shadow: 2px 2px 47px 0px rgba(207,25,92,1);
+}
+
+.img-responsive{
+  display:inline-block;
+}
+
+
+  .showInterestButton {
+ display: inline-block;
+ padding: .75rem 1rem;
+ margin-top: 1.618rem;
+ font-weight: 400;
+ text-align: center;
+ text-transform: uppercase;
+ color: #fff;
+ vertical-align: middle;
+ white-space: nowrap;
+ background-color: #ffab00;
+ border: 1px solid transparent;
+ box-shadow: 0 15px 35px rgba(50, 50, 93, 0.1), 0 5px 15px rgba(0, 0, 0, 0.07);
+ cursor: pointer;
+ -webkit-user-select: none;
+ -moz-user-select: none;
+ -ms-user-select: none;
+ user-select: none;
+ -webkit-transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
+ transition: all 0.25s cubic-bezier(0.4, 0, 1, 1);
+}
+
+.container-form-login{
+      width: 500px;
+      height: 500px;
+  
+    position: absolute;
+    left: 50%;
+    top:5%;
+    transform: translate(-50%); 
+    
+}
+
+
+.login-page{
+  background-image: url('./Images/login.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  
+}
+.mylisting-panel{
+  width:700px;
+  margin-top: 50px;
+  margin-left: 100px;
+}
