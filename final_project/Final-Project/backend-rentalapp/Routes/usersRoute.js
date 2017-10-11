@@ -15,7 +15,6 @@ const User = require('../models/User').model;
 
 
 router.post('/register', (req,res)=>{
-    // console.log(req);
 
     let user = req.body;
    
@@ -50,7 +49,6 @@ router.post('/login', (req,res)=>{
         }
         else{
    console.log("invalid password")
-        //respond with no object
         }
         
     })
@@ -62,23 +60,6 @@ router.post('/login', (req,res)=>{
     
 })
 
-
-// router.get('/:user_id', (req,res)=>{
-//      let id = req.params.user_id
-//      console.log(id)
-//    User.findById(id)
-//    .then(user=>{
-//        console.log(user);
-//        res.json(user)
-//    })
-//    .catch(err=>{
-//        console.log(err)
-//        res.status(400)
-//        .json({err})
-//    })
-
-
-// })
 
 
 module.exports=router

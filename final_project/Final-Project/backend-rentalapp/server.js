@@ -23,12 +23,6 @@ db.once('open', function () {
 });
 
 
-// seeding the db
-// const seedDealerships = require('./seeds/dealerships');
-// const seedCars = require('./seeds/cars');
-// seedDealerships();
-// seedCars();
-
 // getting models in
 const User= require('./models/User').model;
 const Property = require('./models/Property').model;

@@ -66,42 +66,6 @@ router.get('/properties/:useremail', (req,res)=>{
 })
 
 
-// router.get('/properties/:property_id', (req,res)=>{
-//      let id = req.params.property_id
-//      console.log(id)
-//    Property.findById(id)
-//    .then(property=>{
-//        console.log(property);
-//        res.json(property)
-//    })
-//    .catch(err=>{
-//        console.log(err)
-//        res.status(400)
-//        .json({err})
-//    })
-
-
-// })
-
-// router.put('/cars/:car_id', (req,res)=>{
-//     Cars.findOneAndUpdate({_id:req.params.car_id},{make:req.body.make},{})
-//     .then(car=>{
-//         console.log(car)
-//         res.json(car)
-//     })
-
-//     .catch(err=>{
-//         console.log(err)
-//         res.status(400)
-//         .json({err})
-//     })
-    
-
-
-// })
-
-
-
 
 router.delete('/cars/:car_id', (req,res)=>{
     Cars.findByIdAndRemove(req.params.car_id)
