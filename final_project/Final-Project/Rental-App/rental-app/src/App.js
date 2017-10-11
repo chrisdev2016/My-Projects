@@ -22,19 +22,11 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-
-
       currentUser: '',
-
       isUserLoggedIn: false,
-
       listings: this.props.route.listings,
-
       input: '',
-
       interested: false
-
-
     }
 
     this.showInterest = this.showInterest.bind(this)
@@ -42,16 +34,12 @@ class App extends Component {
     this.setCurrentUser = this.setCurrentUser.bind(this)
     this.logout = this.logout.bind(this)
     this.search = this.search.bind(this)
-
-
-
   }
 
 
 
 
   logout() {
-
     console.log('LOGOUT RAN!');
     this.setState({
       currentUser: '',
@@ -59,45 +47,32 @@ class App extends Component {
 
     })
     browserHistory.push('/home')
-
   }
 
   setCurrentUser(username) {
-
-    this.setState({
+   this.setState({
       isUserLoggedIn: true,
       currentUser: username
     }, () => {
 
     })
-
   }
 
+
   search(text) {
-
-
-    alert(text)
-
     var filteredListings = this.state.listings.filter(listing => {
       return listing.formCity.toLowerCase() == text.toLowerCase()
     })
 
-
-
     this.setState({
       listings: filteredListings
     })
-
-
 
     if (!filteredListings) {
       alert('no listings found')
     }
 
   }
-
-
-
 
 
   showInterest(id) {

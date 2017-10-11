@@ -3,12 +3,6 @@ import axios from 'axios';
 import '../App.css';
 import { Link } from 'react-router';
 
-
-
-
-
-
-
 class DisplaySummary extends Component {
     constructor(props) {
         super(props)
@@ -69,15 +63,6 @@ return(
         {imageArray}
     </div>
 )
-
-      
-
-        
-
-
-
-
-
     }
 
 }

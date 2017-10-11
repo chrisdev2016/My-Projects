@@ -71,10 +71,6 @@ class Listings extends Component {
 
                             <p className="company">RentMe</p>
 
-
-
-
-
                             <form className="navbar-form navbar-right" onSubmit={this.onSubmit} >
                                 <div className="form-group">
                                     <input type="text" className="form-control"  ref="text" placeholder="Search by city" />
@@ -95,7 +91,7 @@ class Listings extends Component {
 
                                     </ul>
                                 </li>
-                                {/*<li  className="floatRight" style={style2}> <a onClick={()=>{this.props.logout()}}>  log out </a></li>*/}
+                                
                             </ul>
                         </div>
                     </div>

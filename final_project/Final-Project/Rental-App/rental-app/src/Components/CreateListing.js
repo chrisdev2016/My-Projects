@@ -158,35 +158,7 @@ class CreateListing extends Component {
         return (
 
            <div>
-
-        
-
-                        {/*<nav className="navbar navbar-default">
-                <div className="container-fluid">
-                    <div className="navbar-header">
-                        <div className="navbar-brand " >
-                            <div className="logo logoDivision"> </div>
-                        
-                               <p className="company">RentMe</p>                          
-                        </div>
-                        
-                         </div>
-                         <div>
-                    <ul className="nav navbar-nav" style={{'width':'100%'}}>
-                        <li  className="floatRight" ><Link to='/home'>Home</Link></li>
-                        <li className="floatRight" style={ style }> <Link to='/Register'>register</Link> </li>
                        
-                        <li className="floatRight" style={style2}> <a> welcome</a> </li>
-                         <li className="floatRight" style={ style }> <Link to='/Login'>login</Link> </li>
-                    
-                    </ul>
-                    </div>
-                </div>
-            </nav>*/}
-
-
-
-
          <div className="container-form">
 
             <form id="createListing" className='react-form' style={{ 'width': '75%','height':'100%' }}  onSubmit={this.handleSubmit}>

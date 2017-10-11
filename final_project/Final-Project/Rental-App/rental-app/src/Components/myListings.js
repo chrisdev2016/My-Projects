@@ -5,21 +5,6 @@ import { Link } from 'react-router';
 class MyListings extends Component {
     render() {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         let useremail = this.props.currentUser
         console.log(useremail)
 
@@ -48,9 +33,6 @@ class MyListings extends Component {
             )
         })
 
-
-
-        
 
         var UserloggedIn = this.props.isUserLoggedIn
 
@@ -127,13 +109,7 @@ class MyListings extends Component {
 
                 </div>
 
-
-
-
-
                 )
-
-
 
     }
 
