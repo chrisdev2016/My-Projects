@@ -2,7 +2,7 @@
 
 import React, { Component } from 'react';
 import axios from 'axios';
-import {browserHistory} from 'react-router';
+import { browserHistory } from 'react-router';
 import { Link } from 'react-router';
 import '../App.css';
 
@@ -61,7 +61,7 @@ class CreateListing extends Component {
     };
 
 
-    
+
 
 
 
@@ -105,14 +105,14 @@ class CreateListing extends Component {
 
 
                     console.log("creation successful");
-                      browserHistory.push('/home')
-                      alert("success")
+                    browserHistory.push('/home')
+                    alert("success")
 
                 }
             })
             .catch(function (error) {
                 console.log(error);
-                alert ("error")
+                alert("error")
 
             });
 
@@ -121,133 +121,121 @@ class CreateListing extends Component {
 
 
 
-          this.setState({
-              address:'',
-              unit:'',
-              city:'',
-              province: '',
-              postal_code:'',
-              number_of_bedrooms:'',
-              number_of_bathrooms:'',
-              rent_amount:'',
-              contact_name:'',
-              contact_number:'',
-              email:'',
+        this.setState({
+            address: '',
+            unit: '',
+            city: '',
+            province: '',
+            postal_code: '',
+            number_of_bedrooms: '',
+            number_of_bathrooms: '',
+            rent_amount: '',
+            contact_name: '',
+            contact_number: '',
+            email: '',
 
 
-          });
+        });
     };
 
     render() {
 
-       var UserloggedIn =this.props.isUserLoggedIn
-
-        var style = UserloggedIn ? {
-           "display": 'none'
-        } : null;
-
-        console.log(style)
-
- var style2 = UserloggedIn ?
-           null
-        :{"display": 'none'} ;
-
-      var currentUser = this.props.currentUser;
+        var currentUser = this.props.currentUser;
 
 
         return (
 
-           <div>
-                       
-         <div className="container-form">
+            <div>
 
-            <form id="createListing" className='react-form' style={{ 'width': '75%','height':'100%' }}  onSubmit={this.handleSubmit}>
-               
-               
-                <h1>Tell us about your property</h1>
+                <div className="container-form">
+
+                    <form id="createListing" className='react-form' style={{ 'width': '75%', 'height': '100%' }} onSubmit={this.handleSubmit}>
 
 
-                
-                <fieldset className='form-group'>
-                    <ReactFormLabel htmlFor='formAddress' title='Address:' />
+                        <h1>Tell us about your property</h1>
 
-                    <input id='formAddress' className='form-input' name='address' type='text' required onChange={this.handleChange} value={this.state.address} />
-                </fieldset>
+                        <p> {this.props.isUserLoggedIn ? null : 'please login to post interest on this property'} </p>
 
-                <fieldset className='form-group'>
-                    <ReactFormLabel htmlFor='formUnit' title='Unit#:' />
+                        <fieldset className='form-group'>
+                            <ReactFormLabel htmlFor='formAddress' title='Address:' />
 
-                    <input id='formUnit' className='form-input' name='unit' type='text' required onChange={this.handleChange} value={this.state.unit} />
-                </fieldset>
+                            <input id='formAddress' className='form-input' name='address' type='text' required onChange={this.handleChange} value={this.state.address} />
+                        </fieldset>
 
-                <fieldset className='form-group'>
-                    <ReactFormLabel htmlFor='formCity' title='City:' />
+                        <fieldset className='form-group'>
+                            <ReactFormLabel htmlFor='formUnit' title='Unit#:' />
 
-                    <input id='formCity' className='form-input' name='city' type='text' required onChange={this.handleChange} value={this.state.city} />
-                </fieldset>
+                            <input id='formUnit' className='form-input' name='unit' type='text' required onChange={this.handleChange} value={this.state.unit} />
+                        </fieldset>
 
-                <fieldset className='form-group'>
-                    <ReactFormLabel htmlFor='formProvince' title='Province:' />
+                        <fieldset className='form-group'>
+                            <ReactFormLabel htmlFor='formCity' title='City:' />
 
-                    <input id='formProvince' className='form-input' name='province' type='text' required onChange={this.handleChange} value={this.state.province} />
-                </fieldset>
+                            <input id='formCity' className='form-input' name='city' type='text' required onChange={this.handleChange} value={this.state.city} />
+                        </fieldset>
 
-                <fieldset className='form-group'>
-                    <ReactFormLabel htmlFor='formPostalCode' title='postal code:' />
+                        <fieldset className='form-group'>
+                            <ReactFormLabel htmlFor='formProvince' title='Province:' />
 
-                    <input id='formPostalCode' className='form-input' name='postal_code' type='text' required onChange={this.handleChange} value={this.state.postal_code} />
-                </fieldset>
+                            <input id='formProvince' className='form-input' name='province' type='text' required onChange={this.handleChange} value={this.state.province} />
+                        </fieldset>
 
-                <fieldset className='form-group'>
-                    <ReactFormLabel htmlFor='formNumberOfBedrooms' title='number of bedrooms:' />
+                        <fieldset className='form-group'>
+                            <ReactFormLabel htmlFor='formPostalCode' title='postal code:' />
 
-                    <input id='formNumberOfBedrooms' className='form-input' name='number_of_bedrooms' type='text' required onChange={this.handleChange} value={this.state.number_of_bedrooms} />
-                </fieldset>
+                            <input id='formPostalCode' className='form-input' name='postal_code' type='text' required onChange={this.handleChange} value={this.state.postal_code} />
+                        </fieldset>
 
+                        <fieldset className='form-group'>
+                            <ReactFormLabel htmlFor='formNumberOfBedrooms' title='number of bedrooms:' />
 
-                <fieldset className='form-group'>
-                    <ReactFormLabel htmlFor='formNumberOfBathrooms' title='number of bathrooms:' />
-
-                    <input id='formNumberOfBathrooms' className='form-input' name='number_of_bathrooms' type='text' required onChange={this.handleChange} value={this.state.number_of_bathrooms} />
-                </fieldset>
-
-                <fieldset className='form-group'>
-                    <ReactFormLabel htmlFor='formRentAmount' title='Rent(cad):' />
-
-                    <input id='formRentAmount' className='form-input' name='rent_amount' type='text' required onChange={this.handleChange} value={this.state.rent_amount} />
-                </fieldset>
-
-                <fieldset className='form-group'>
-                    <ReactFormLabel htmlFor='formContactName' title='contact name:' />
-
-                    <input id='formContactName' className='form-input' name='contact_name' type='text' required onChange={this.handleChange} value={this.state.contact_name} />
-                </fieldset>
+                            <input id='formNumberOfBedrooms' className='form-input' name='number_of_bedrooms' type='text' required onChange={this.handleChange} value={this.state.number_of_bedrooms} />
+                        </fieldset>
 
 
-                <fieldset className='form-group'>
-                    <ReactFormLabel htmlFor='formContactNumber' title='contact number:' />
+                        <fieldset className='form-group'>
+                            <ReactFormLabel htmlFor='formNumberOfBathrooms' title='number of bathrooms:' />
 
-                    <input id='formContactNumber' className='form-input' name='contact_number' type='tel' required onChange={this.handleChange} value={this.state.contact_number} />
-                </fieldset>
+                            <input id='formNumberOfBathrooms' className='form-input' name='number_of_bathrooms' type='text' required onChange={this.handleChange} value={this.state.number_of_bathrooms} />
+                        </fieldset>
 
-                <fieldset className='form-group'>
-                    <ReactFormLabel htmlFor='formEmail' title='Email:' />
+                        <fieldset className='form-group'>
+                            <ReactFormLabel htmlFor='formRentAmount' title='Rent(cad):' />
 
-                    <input id='formEmail' className='form-input' name='email' type='email' required onChange={this.handleChange} value={this.state.email} />
-                </fieldset>
+                            <input id='formRentAmount' className='form-input' name='rent_amount' type='text' required onChange={this.handleChange} value={this.state.rent_amount} />
+                        </fieldset>
 
-                
+                        <fieldset className='form-group'>
+                            <ReactFormLabel htmlFor='formContactName' title='contact name:' />
 
-                <div className='form-group'>
-                    <input id='formButton' className='btn' type='submit' placeholder='Save' />
+                            <input id='formContactName' className='form-input' name='contact_name' type='text' required onChange={this.handleChange} value={this.state.contact_name} />
+                        </fieldset>
+
+
+                        <fieldset className='form-group'>
+                            <ReactFormLabel htmlFor='formContactNumber' title='contact number:' />
+
+                            <input id='formContactNumber' className='form-input' name='contact_number' type='tel' required onChange={this.handleChange} value={this.state.contact_number} />
+                        </fieldset>
+
+                        <fieldset className='form-group'>
+                            <ReactFormLabel htmlFor='formEmail' title='Email:' />
+
+                            <input id='formEmail' className='form-input' name='email' type='email' required onChange={this.handleChange} value={this.state.email} />
+                        </fieldset>
+
+
+
+                        <div className='form-group'>
+                            <input id='formButton' className='btn' type='submit' placeholder='Save' />
+                        </div>
+
+
+                    </form>
                 </div>
-                
 
-            </form>
             </div>
-            
-            </div>
-        
+
         )
     }
 };

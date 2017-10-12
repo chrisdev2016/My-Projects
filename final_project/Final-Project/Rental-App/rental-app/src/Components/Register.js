@@ -36,12 +36,7 @@ handleClick(e){
    .then( (response)=>{   
        console.log(response) 
      if(response.status == 200){
-        // this.props.setCurrentUser(this.state.first_name)
-    
-        // let currentUser = this.props.currentUser
-        // console.log(currentUser)
-
-
+       
        console.log("registration successfull");
        browserHistory.push('/login')
  
